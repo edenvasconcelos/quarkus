@@ -55,7 +55,7 @@ public abstract class Pessoa extends PanacheEntityBase {
         this.enderecos = new ArrayList<>();
     }
 
-    public enum Situacao {
+    public static enum Situacao {
         Ativo("A"),
         Inativo("I");
 
@@ -63,5 +63,23 @@ public abstract class Pessoa extends PanacheEntityBase {
         private Situacao(String tipo) { this.value = tipo; }
         public String getValue() { return value; }       
     }
+
+    public static enum Tipo {
+        Fisica(Values.FISICA),
+        Juridica(Values.JURIDICA),
+        Estrangeira(Values.ESTRANGEIRA);
+
+        private String value;
+        private Tipo(String tipo) { this.value = tipo; }
+        public String getValue() { return value; }    
+
+        public static class Values {
+            public static final String FISICA = "F";
+            public static final String JURIDICA = "J";
+            public static final String ESTRANGEIRA = "E";
+        }   
+
+    }
+
 
 }
