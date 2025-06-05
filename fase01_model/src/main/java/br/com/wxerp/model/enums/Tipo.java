@@ -18,15 +18,5 @@ public class Tipo {
         }   
 
     }
-
-    public static enum Endereco {
-        Residencial("R"),
-        Comercial("C"),
-        Outros("O");
-    
-        private final String value;
-        private Endereco(String tipo) { this.value = tipo; }
-        public String getValue() { return value; }    
-    
-    }
+   
 }
