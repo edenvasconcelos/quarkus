@@ -1,6 +1,5 @@
 package br.com.wxerp.model.embarcado;
 
-import br.com.wxerp.model.enums.Tipo;
 import br.com.wxerp.model.tabela.Estado;
 import br.com.wxerp.model.tabela.Pais;
 import jakarta.persistence.Column;
@@ -14,7 +13,7 @@ public class Endereco {
     public int seq;
     
     @Column(name = "tipo_endereco")
-    public Tipo.Endereco tipoEndereco;
+    public Tipo tipoEndereco;
     
     @Column(length = 125)
     public String logradouro;
@@ -51,4 +50,15 @@ public class Endereco {
         this.estado = new Estado();
     }
  */
+
+    public enum Tipo {
+        Residencial("R"),
+        Comercial("C"),
+        Outros("O");
+    
+        private final String value;
+        private Tipo(String tipo) { this.value = tipo; }
+        public String getValue() { return value; }    
+    
+    } 
 }

@@ -27,13 +27,13 @@ import jakarta.persistence.JoinColumn;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name="pessoa")
-public class Pessoa extends PanacheEntityBase {
+public abstract class Pessoa extends PanacheEntityBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    public char situacao;
+    public Situacao situacao;
 
     @Column(length = 500)
     public String observacao;
@@ -53,6 +53,15 @@ public class Pessoa extends PanacheEntityBase {
 
     public Pessoa() {
         this.enderecos = new ArrayList<>();
+    }
+
+    public enum Situacao {
+        Ativo("A"),
+        Inativo("I");
+
+        private final String value;
+        private Situacao(String tipo) { this.value = tipo; }
+        public String getValue() { return value; }       
     }
 
 }
