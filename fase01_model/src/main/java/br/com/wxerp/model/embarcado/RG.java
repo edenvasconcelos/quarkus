@@ -17,8 +17,8 @@ public class RG {
     public String numero;
 
     @ManyToOne
-    @JoinColumn(name = "uf_expedicao")
-    public Estado ufExpedicao;
+    @JoinColumn(name = "rg_uf_expedicao")
+    public Estado rgUFExpedicao;
 
     @Column(name = "rg_data_expedicao")
     @Temporal(TemporalType.DATE)

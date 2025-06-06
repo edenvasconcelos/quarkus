@@ -6,7 +6,7 @@ import jakarta.persistence.Embeddable;
 @Embeddable
 public class RegimeTributario {
 
-    @Column(name = "tipo_regime_tributario")
+    @Column(name = "tipo_regime_tributario", length = 1)
     Tipo tipoRegimeTriburario;
 
     @Column(name = "aliquota_simples_nacional")
